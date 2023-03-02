@@ -7,19 +7,23 @@
     <link href="./styles.css" rel="stylesheet">
     <title>F-Stopium</title>
   </head>
-  <script type="text/javascript">
-        window.onload = scrollDownToTheTop;
-        function setBrowserFrameSource() {
-        var browserFrame = document.getElementById("reverse-browser");
-        browserFrame.src= document.getElementById("txtUrl").value;
-        window.scrollTo(0, document.body.scrollHeight);
-        }
-  </script>
   <body>
     <form method="post" target="reverse-browser">
-            <input id="txtUrl" style="width:82%;" placeholder="Put the website here" name="url" type="text" />
-            <input style="width:8%;" type="button" value="Go" onclick="setBrowserFrameSource(); return false;"/>
+            <input id="txtUrl" style="width:72%;" placeholder="Put the website here" name="url" type="text" />
+            <input style="width:8%;" type="button" value="Go" onclick="setBrowserFrameSource(); return false;"/> <input style="width:8%;" type="button" value="<--" onclick="back(); return false;"/> <input style="width:8%;" type="button" value="-->" onclick="forward(); return false;"/>
     </form>
     <webview id="foo" src="https://www.duckduckgo.com/" style="display:inline-flex; width:100%; height:100%"></webview>
+ <script type="text/javascript">
+        var browserFrame = document.getElementById("foo");
+        function setBrowserFrameSource() {
+        browserFrame.loadURL(document.getElementById("txtUrl").value);
+        }
+        function back() {
+        browserFrame.goBack()
+        }
+        function forward() {
+        browserFrame.goForward()
+        }
+  </script>
   </body>
 </html>

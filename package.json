@@ -17,6 +17,10 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
+    "@electron-forge/cli": "^6.0.5",
     "electron": "^23.1.0"
+  },
+  "dependencies": {
+    "electron-tabs": "^1.0.1"
   }
 }

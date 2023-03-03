@@ -23,3 +23,7 @@ npm start
 ## License
 
 [MIT Modified](LICENSE.md)
+
+## Disclaimer
+
+"Insider's Look" builds are meant for people who are just testing core functionality by default, and aren't interested in changes! If you want changes, compile it.

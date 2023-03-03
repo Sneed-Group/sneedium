@@ -17,6 +17,7 @@ function createWindow () {
   })
 
   mainWindow.removeMenu()
+  mainWindow.setMinimumSize(800, 600)
 
   
 const toBlock = [

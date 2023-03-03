@@ -9,7 +9,9 @@ function go() {
     })
     document.getElementById("txtUrl").value = ""
     for (let i = 0; i < extensions.length; i++) {
-        fetch(extensions[i]).then( r => r.text() ).then( t =>  browserFrame.executeJavaScript(t))
+        fetch(extensions[i]).then( r => r.text() ).then( t =>  browserFrame.executeJavaScript(t)).catch(() => {
+            console.log("Error loading extensions! (Did you provide any?)")
+        })
     }
 }
 function back() {

@@ -11,7 +11,7 @@ A basic Electron application needs just these files:
 
 ## To Use
 
-To clone and run this repository you'll need [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+To clone and run this repository you'll need [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)), and git installed on your computer. From your command line:
 
 ```bash
 # Install dependencies

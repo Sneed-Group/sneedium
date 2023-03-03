@@ -11,7 +11,7 @@ A basic Electron application needs just these files:
 
 ## To Use
 
-To clone and run this repository you'll need [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)), and git installed on your computer. From your command line:
+To clone and run this repository you'll need [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
 ```bash
 # Install dependencies
@@ -26,4 +26,4 @@ npm start
 
 ## Disclaimer
 
-"Insider's Look" builds are meant for people who are just testing core functionality by default, and aren't interested in changes! If you want changes, run it from source.
+"Insider's Look" builds are meant for people who are just testing core functionality by default, and aren't interested in changes! If you want changes, compile it.

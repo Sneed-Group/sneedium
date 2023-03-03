@@ -1,8 +1,7 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow} = require('electron')
+const {app, BrowserWindow, session} = require('electron')
 const path = require('path')
-const fetchr = require("cross-fetch")
-const { ElectronBlocker, fullLists, Requests } = require('@cliqz/adblocker-electron')
+const fetch = require("cross-fetch")
 
 
 function createWindow () {
@@ -16,17 +15,56 @@ function createWindow () {
     }
   })
 
-  ElectronBlocker.fromPrebuiltAdsAndTracking(fetchr).then((blocker) => {
-    blocker.enableBlockingInSession(mainWindow.webContents.defaultSession).catch(() => {
-      console.log("Blocker reported an error while init.")
-    })
-  });
+  
+const toBlock = [
+  "*://*.doubleclick.net/*",
+  "*://partner.googleadservices.com/*",
+  "*://*.googlesyndication.com/*",
+  "*://*.google-analytics.com/*",
+  "*://creative.ak.fbcdn.net/*",
+  "*://*.adbrite.com/*",
+  "*://*.exponential.com/*",
+  "*://*.quantserve.com/*",
+  "*://*.scorecardresearch.com/*",
+  "*://*.zedo.com/*",
+  "*://*.a-ads.com/*",
+  "*://*.777partner.com/*",
+  "*://*.77tracking.com/*",
+  "*://*.abc-ads.com/*",
+  "*://*.aaxads.com/*",
+  "*://*.adizio.com/*",
+  "*://*.adjix.com/*",
+  "*://*.adjug.com/*",
+  "*://*.adjuggler.com/*",
+  "*://*.trafficjunky.net/*",
+  "*://*.trafficleader.com/*",
+  "*://*.trafficrouter.io/*"
+  ]
+  
+  function containsAD(url) {
+    var i;
+    for (i = 0; i < toBlock.length; i++) {
+        regex = toBlock[i].replace(/\*/g, "[^ ]*");
+        if (url.match(regex)) {
+            return true;
+        }
+    }
+
+    return false;
+  }
+
+  session.defaultSession.webRequest.onBeforeRequest((details, callback) => {
+    if(/api\/v\d\/science$/g.test(details.url) || containsAD(details.url)) {
+      return callback({cancel: true})
+    }
+    return callback({})
+  })
 
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
-  // mainWindow.webContents.openDevTools()
+  mainWindow.webContents.openDevTools()
 }
 
 // This method will be called when Electron has finished

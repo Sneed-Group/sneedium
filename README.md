@@ -1,5 +1,6 @@
 # F-Stopium
 A basic web browser in Electron.
+[![powered by Ghostery](https://img.shields.io/badge/ghostery-powered-blue?logo=ghostery)](https://github.com/ghostery/adblocker)
 
 A basic Electron application needs just these files:
 

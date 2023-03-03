@@ -1,5 +1,5 @@
 # F-Stopium
-A basic web browser in Electron. ***Now with a functioning adblocker!***
+A basic web browser in Electron. ***Now with our own, functioning adblocker!***
 
 A basic Electron application needs just these files:
 

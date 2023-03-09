@@ -14,4 +14,13 @@ window.addEventListener('DOMContentLoaded', () => {
   for (const type of ['chrome', 'node', 'electron']) {
     replaceText(`${type}-version`, process.versions[type])
   }
+  const { ipcRenderer } = require('electron')
+  ipcRenderer.on('windowmaker', (event, arg) => {
+    console.log(arg) // prints "pong"
+  })
+    //button and its event listener
+  const makeWindowButton = document.getElementById('nwBtn');
+  makeWindowButton.addEventListener('click', () => {
+      ipcRenderer.send('windowmaker', 'ping')
+  })
 })

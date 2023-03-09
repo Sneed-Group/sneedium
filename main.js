@@ -1,9 +1,19 @@
 // Modules to control application life and create native browser window
-const {app, BrowserWindow, session} = require('electron')
+const {app, BrowserWindow, session, ipcMain} = require('electron')
 const path = require('path')
 const fetch = require("cross-fetch")
 const { ElectronChromeExtensions } = require('electron-chrome-extensions')
 
+ipcMain.on('windowmaker', (event, arg) => {
+  createWindow();
+})
+
+function newExtensionSession(mainWindow) {
+  const extensions = new ElectronChromeExtensions({
+    session: session.defaultSession
+  })
+  extensions.addTab(mainWindow.webContents, mainWindow)
+}
 
 function createWindow () {
   // Create the browser window.
@@ -67,23 +77,22 @@ const toBlock = [
     }
     return callback({})
   })
-  const extensions = new ElectronChromeExtensions({
-    session: session.defaultSession
-  })
-  extensions.addTab(mainWindow.webContents, mainWindow)
+  
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools()
+  
+  return mainWindow;
 }
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
-  createWindow()
-
+  let x = createWindow()
+  newExtensionSession(x)
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.

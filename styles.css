@@ -22,6 +22,17 @@ body {
   margin: 0;
 }
 
+#nwBtn {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 1% 1%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.25rem;
+}
+
 #goBtn {
   background-color: #4CAF50; /* Green */
   border: none;

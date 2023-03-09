@@ -2,7 +2,6 @@ let tabGroup = document.querySelector("tab-group");
 function go() {
     let browserFrame = tabGroup.getActiveTab().webview
     let browser = tabGroup.getActiveTab()
-    extensions.addTab(browserWindow, browserFrame)
     browserFrame.loadURL(document.getElementById("txtUrl").value);
     browserFrame.addEventListener('dom-ready', () => {
         browserFrame.insertCSS(`
@@ -19,8 +18,8 @@ function go() {
     })
     document.getElementById("txtUrl").value = ""
     for (let i = 0; i < userscripts.length; i++) {
-        fetch(extensions[i]).then( r => r.text() ).then( t =>  userscripts.executeJavaScript(t)).catch(() => {
-            console.log("Error loading extensions! (Did you provide any?)")
+        fetch(userscripts[i]).then( r => r.text() ).then( t =>  userscripts.executeJavaScript(t)).catch(() => {
+            console.log("Error loading userscripts! (Did you provide any?)")
         })
     }
 }
@@ -52,3 +51,4 @@ function clickPress(keyEvent) {
         go()
     }
 }
+

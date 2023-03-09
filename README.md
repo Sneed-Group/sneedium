@@ -32,4 +32,4 @@ npm start
 
 ## What is Privacy Redirection Technology (PRT)?
 
-This is a simple technology that replaces a bad URL with a more privacy friendly service, when we know that ADs aren't blocked 100% or just to provide a better UX. TLDR: Clickjacking for good.
+This is a simple technology that replaces a bad URL with a more privacy friendly service, when we know that ADs aren't 100% blocked, or just to provide a better UX. TLDR: Clickjacking for good.

@@ -36,6 +36,7 @@ function createWindow () {
   
 const toBlock = [
   "*://*.doubleclick.net/*",
+  "*://s.innovid.com/*",
   "*://partner.googleadservices.com/*",
   "*://*.googlesyndication.com/*",
   "*://*.google-analytics.com/*",
@@ -58,6 +59,8 @@ const toBlock = [
   "*://*.trafficleader.com/*",
   "*://*.trafficrouter.io/*",
   "*://*.monerominer.rocks/*",
+  "*://*.googlevideo.com/*",
+  "*://*.2mdn.net/*",
   "*.exe",
   "*.vbs"
   ]

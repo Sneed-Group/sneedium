@@ -10,8 +10,7 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 3rem;
-  user-select: none;
+  font-size: 1.25rem;
 }
 
 #backBtn {
@@ -22,8 +21,7 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 3rem;
-  user-select: none;
+  font-size: 1.25rem;
 }
 
 #forwardBtn {
@@ -34,8 +32,7 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 3rem;
-  user-select: none;
+  font-size: 1.25rem;
 }
 
 #txtUrl {
@@ -44,6 +41,9 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 3rem;
+  font-size: 1.25rem;
+}
+
+body {
   user-select: none;
 }

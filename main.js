@@ -59,16 +59,27 @@ const toBlock = [
   "*://*.trafficleader.com/*",
   "*://*.trafficrouter.io/*",
   "*://*.monerominer.rocks/*",
-  "*://*.googlevideo.com/*",
   "*://*.2mdn.net/*",
   "*.exe",
-  "*.vbs"
+  "*.vbs",
   ]
+  
+const regexPatterns = [
+"/api\/v\d\/science$/g",
+"r[0-9]+---sn-.*\.googlevideo\.com$/g"
+] 
   
   function containsAD(url) {
     var i;
     for (i = 0; i < toBlock.length; i++) {
-        regex = toBlock[i].replace(/\*/g, "[^ ]*");
+        let regex = toBlock[i].replace(/\*/g, "[^ ]*");
+        if (url.match(regex)) {
+            return true;
+        }
+    }
+    
+    for (i = 0; i < regexPatterns.length; i++) {
+        let regex = regexPatterns[i]
         if (url.match(regex)) {
             return true;
         }
@@ -78,7 +89,7 @@ const toBlock = [
   }
 
   session.defaultSession.webRequest.onBeforeRequest((details, callback) => {
-    if(/api\/v\d\/science$/g.test(details.url) || containsAD(details.url)) {
+    if (containsAD(details.url)) {
       return callback({cancel: true})
     }
     return callback({})

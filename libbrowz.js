@@ -2,7 +2,9 @@ let tabGroup = document.querySelector("tab-group");
 function go() {
     let browserFrame = tabGroup.getActiveTab().webview
     let browser = tabGroup.getActiveTab()
-    browserFrame.loadURL(document.getElementById("txtUrl").value);
+    let url = document.getElementById("txtUrl").value
+    document.getElementById("txtUrl").value = ""
+    browserFrame.loadURL(url);
     browserFrame.addEventListener('dom-ready', () => {
         browserFrame.insertCSS(`
         ::-webkit-scrollbar {
@@ -16,7 +18,6 @@ function go() {
         tabGroup.getActiveTab().setTitle(title)
         console.log(title)
     })
-    document.getElementById("txtUrl").value = ""
     for (let i = 0; i < userscripts.length; i++) {
         fetch(userscripts[i]).then( r => r.text() ).then( t =>  userscripts.executeJavaScript(t)).catch(() => {
             console.log("Error loading userscripts! (Did you provide any?)")
@@ -51,4 +52,3 @@ function clickPress(keyEvent) {
         go()
     }
 }
-

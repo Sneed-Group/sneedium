@@ -9,7 +9,7 @@
   </head>
   <body>
     <input id="txtUrl" style="width:72%;" placeholder="Put the website here" name="url" type="text" onkeypress="clickPress(event)" />
-    <button onclick="go(); return false;">✅</button> <button onclick="back(); return false;">⬅️</button> <button onclick="forward(); return false;">➡️</button>
+    <button onclick="go(); return false;" id="goBtn">✅</button> <button onclick="back(); return false;" id="backBtn">⬅️</button> <button onclick="forward(); return false;" id="forwardBtn">➡️</button>
     <tab-group new-tab-button="true" sortable="true"><webview id="foo" style="width:100%; height:90vh" disablewebsecurity></webview></tab-group>
     <script src="node_modules/electron-tabs/dist/electron-tabs.js"></script>
     <script type="text/javascript" src="./extension/extensionList.js"></script>

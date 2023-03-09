@@ -30,6 +30,6 @@ npm start
 
 "Insider's Look" builds are outdated and meant for people who are just testing core functionality by default, and aren't interested in changes! If you want changes, compile it.
 
-## What is Privacy Redirection Technology?
+## What is Privacy Redirection Technology (PRT)?
 
-This is a simple technology that replaces a bad URL with a more privacy friendly service, when we know that ADs aren't blocked 100% or just to provide a better UX.
+This is a simple technology that replaces a bad URL with a more privacy friendly service, when we know that ADs aren't blocked 100% or just to provide a better UX. TLDR: Clickjacking for good.

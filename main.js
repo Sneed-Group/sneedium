@@ -7,7 +7,7 @@ const fetch = require("cross-fetch")
 function createWindow () {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
+    width: 1094,
     height: 600,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
@@ -17,7 +17,7 @@ function createWindow () {
   })
 
   mainWindow.removeMenu()
-  mainWindow.setMinimumSize(800, 600)
+  mainWindow.setMinimumSize(1094, 600)
 
   
 const toBlock = [

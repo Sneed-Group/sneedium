@@ -57,7 +57,9 @@ const toBlock = [
   "*://*.trafficjunky.net/*",
   "*://*.trafficleader.com/*",
   "*://*.trafficrouter.io/*",
-  "*://*.monerominer.rocks/*"
+  "*://*.monerominer.rocks/*",
+  "*.exe",
+  "*.vbs"
   ]
   
   function containsAD(url) {

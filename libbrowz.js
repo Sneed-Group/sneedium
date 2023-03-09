@@ -8,6 +8,12 @@ function go() {
     	url = url.replaceAll("youtu.be", "yewtu.be")
     } else if (url.includes("google.com/?q")) {
     	url = url.replaceAll("google.com/?q", "startpage.com/?q")
+    } else if (url.includes("google.com") && !url.includes("maps") && !url.includes("news")) {
+    	url = url.replaceAll("google.com", "startpage.com")
+    } else if (url.includes("https://news.google.com")) {
+    	url = url.replaceAll("https://news.google.com", "http://68k.news")
+    } else if (url.includes("news.google.com")) {
+    	url = url.replaceAll("news.google.com", "68k.news")
     }
     document.getElementById("txtUrl").value = ""
     browserFrame.loadURL(url);

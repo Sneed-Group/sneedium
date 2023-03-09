@@ -6,9 +6,7 @@
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make",
-    "make-flatpak": "electron-forge make --platform linux --targets flatpak",
-    "make-appimg": "electron-forge make --platform linux --targets appimage"
+    "make": "npx electron-packager --platform linux,win32 --arch x64,arm64",
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [

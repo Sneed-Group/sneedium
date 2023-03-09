@@ -3,10 +3,11 @@
 # F-Stopium
 A basic web browser in Electron. ***Now with our own, functioning adblocker and privacy redirection technologies!***
 
-Supports compiling via electron packager. Install it with:
+Supports compiling via electron packager. Install and run it with:
 
 ```bash
 npm install --save-dev electron-packager
+npm run make
 ```
 
 A basic Electron application needs just these files:

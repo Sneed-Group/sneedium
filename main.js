@@ -66,11 +66,14 @@ const toBlock = [
   "*pixels*",
   "*telemetry*",
   "*analytics*",
-  "*://r[0-9]*sn*.googlevideo.com*"
+  "*://r[0-9]*sn*.googlevideo.com*",
+  "*://ads.*.com*",
+  "*ae/us/audience*",
+  "*/api/v*/science*",
+  "*/api/v*/typing*"
   ]
   
 const regexPatterns = [
-"/api\/v\d\/science$/g",
 "r[0-9]+---sn-.*\.googlevideo\.com$/g",
 "r[0-9]+-sn-.*\.googlevideo\.com$/g"
 ] 

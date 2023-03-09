@@ -1,1 +1,0 @@
-var extensions = [""] //replace me with a list of urls to javascript files.

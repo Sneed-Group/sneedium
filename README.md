@@ -1,3 +1,4 @@
+<img src="logo.png" align="right" width="5%"/>
 # F-Stopium
 A basic web browser in Electron. ***Now with our own, functioning adblocker!***
 

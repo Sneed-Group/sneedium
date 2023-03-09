@@ -35,7 +35,7 @@ function createWindow () {
 
   
 const toBlock = [
-  "*://*.doubleclick.net/*",
+  "*://*.doubleclick.*",
   "*://s.innovid.com/*",
   "*://partner.googleadservices.com/*",
   "*://*.googlesyndication.com/*",
@@ -62,11 +62,17 @@ const toBlock = [
   "*://*.2mdn.net/*",
   "*.exe",
   "*.vbs",
+  "*://*.googlesyndication.*",
+  "*pixels*",
+  "*telemetry*",
+  "*analytics*",
+  "*://r[0-9]*sn*.googlevideo.com*"
   ]
   
 const regexPatterns = [
 "/api\/v\d\/science$/g",
-"r[0-9]+---sn-.*\.googlevideo\.com$/g"
+"r[0-9]+---sn-.*\.googlevideo\.com$/g",
+"r[0-9]+-sn-.*\.googlevideo\.com$/g"
 ] 
   
   function containsAD(url) {

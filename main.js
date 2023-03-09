@@ -66,7 +66,6 @@ const toBlock = [
   "*pixels*",
   "*telemetry*",
   "*analytics*",
-  "*://r[0-9]*sn*.googlevideo.com*",
   "*://ads.*.com*",
   "*ae/us/audience*",
   "*/api/v*/science*",
@@ -74,8 +73,8 @@ const toBlock = [
   ]
   
 const regexPatterns = [
-"r[0-9]+---sn-.*\.googlevideo\.com$/g",
-"r[0-9]+-sn-.*\.googlevideo\.com$/g"
+"r[0-100]+---sn-.*\.googlevideo\.com$/g",
+"r[0-100]+-sn-.*\.googlevideo\.com$/g"
 ] 
   
   function containsAD(url) {

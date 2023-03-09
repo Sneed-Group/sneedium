@@ -2,22 +2,26 @@
 const {app, BrowserWindow, session} = require('electron')
 const path = require('path')
 const fetch = require("cross-fetch")
+const { ElectronChromeExtensions } = require('electron-chrome-extensions')
 
 
 function createWindow () {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 1094,
+    width: 800,
     height: 600,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       webviewTag: true,
-      devTools: false
+      devTools: false,
+      nodeIntegration: true,
+      sandbox: true,
+      contextIsolation: true
     }
   })
 
   mainWindow.removeMenu()
-  mainWindow.setMinimumSize(1094, 600)
+  mainWindow.setMinimumSize(600, 300)
 
   
 const toBlock = [
@@ -63,7 +67,10 @@ const toBlock = [
     }
     return callback({})
   })
-
+  const extensions = new ElectronChromeExtensions({
+    session: session.defaultSession
+  })
+  extensions.addTab(mainWindow.webContents, mainWindow)
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
 

@@ -3,6 +3,12 @@ function go() {
     let browserFrame = tabGroup.getActiveTab().webview
     let browser = tabGroup.getActiveTab()
     let url = document.getElementById("txtUrl").value
+    if (url.includes("youtube.com") || url.includes("youtu.be")) {
+    	url = url.replaceAll("youtube.com", "yewtu.be")
+    	url = url.replaceAll("youtu.be", "yewtu.be")
+    } else if (url.includes("google.com")) {
+    	url = url.replaceAll("google.com", "startpage.com")
+    }
     document.getElementById("txtUrl").value = ""
     browserFrame.loadURL(url);
     browserFrame.addEventListener('dom-ready', () => {
@@ -52,3 +58,4 @@ function clickPress(keyEvent) {
         go()
     }
 }
+

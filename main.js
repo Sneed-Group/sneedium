@@ -8,17 +8,15 @@ ipcMain.on('windowmaker', (event, arg) => {
   createWindow();
 })
 
-function newExtensionSession(mainWindow) {
+function createWindow () {
+  // Create the browser window.
+
   const extensions = new ElectronChromeExtensions({
     session: session.defaultSession
   })
-  extensions.addTab(mainWindow.webContents, mainWindow)
-}
 
-function createWindow () {
-  // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
+    width: 1000,
     height: 600,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
@@ -31,7 +29,7 @@ function createWindow () {
   })
 
   mainWindow.removeMenu()
-  mainWindow.setMinimumSize(600, 300)
+  mainWindow.setMinimumSize(1000, 300)
 
   
 const toBlock = [
@@ -102,6 +100,8 @@ const regexPatterns = [
     }
     return callback({})
   })
+
+  extensions.addTab(mainWindow.webContents, mainWindow)
   
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
@@ -117,7 +117,6 @@ const regexPatterns = [
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
   let x = createWindow()
-  newExtensionSession(x)
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.

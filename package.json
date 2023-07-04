@@ -30,7 +30,7 @@
     "electron-packager": "^17.1.1"
   },
   "dependencies": {
-    "cross-fetch": "^3.1.5",
+    "cross-fetch": "^4.0.0",
     "electron-chrome-extensions": "^3.10.0",
     "electron-squirrel-startup": "^1.0.0",
     "electron-tabs": "^1.0.1"

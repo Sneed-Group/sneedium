@@ -19,7 +19,7 @@
   "author": "FStop Tech",
   "license": "MIT  (Modified)",
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.5",
+    "@electron-forge/cli": "^7.1.0",
     "@electron-forge/maker-deb": "^6.0.5",
     "@electron-forge/maker-flatpak": "^6.0.5",
     "@electron-forge/maker-rpm": "^6.0.5",

@@ -1,6 +1,6 @@
 The Samuel Public License Revision 5 (SPL-R5)
 
-Copyright (c) 2024 Maxwell Drake
+Copyright (c) 2024 Sneed Group
 
 This document grants permission, without charge, to any individual acquiring a copy of the software and its associated documentation files (hereinafter referred to as the "Software"). Such individuals are authorized to engage in activities related to the Software with certain restrictions (listed below), including, but not limited to, the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software. These permissions extend to persons to whom the Software is furnished, subject to compliance with the specified conditions outlined below.
 

@@ -1,4 +1,4 @@
-The Samuel Public License Revision 5 (SPL-R5)
+The Samuel Public License Revision 5 Sub-Revision 1 (SPL-R5 SR1)
 
 Copyright (c) 2024 Sneed Group
 
@@ -10,7 +10,7 @@ In making contributions to the Software, contributors irrevocably assign, transf
 
 Furthermore, this document permits the reuse and redistribution of both executable binaries and source code, contingent upon the inclusion of the previously mentioned copyright notice and permission notice in all copies or substantial portions of the Software. It is imperative that you explicitly acknowledge and agree that the owner(s) retain ownership rights over the aforementioned source code.
 
-Moreover, companies using the Software are encouraged to contribute upstream. Fortune 500 companies are required to make an annual contribution of at least 20,000 USD or an equivalent amount to support the project's sustainability unless no donation option is provided.
+Moreover, companies using the Software are encouraged to contribute upstream. Fortune 500 companies are required to make an annual contribution of at least 20,000 USD or an equivalent amount per project used to support the said projects' sustainability unless no donation option is provided. Also, all Fortune 500 companies using said projects are required to contibute their changes upstream as well.
 
 Additionally, note that the use of AI-assisted tools, including but not limited to GitHub Copilot and ChatGPT, is expressly permitted in conjunction with this software. Users are encouraged to leverage these AI tools to enhance their experience in developing, modifying, and interacting with the Software. The permission granted herein extends to the integration and utilization of AI-generated content for coding and communication purposes. The owners(s) of the Software acknowledge and embrace the collaborative nature of AI-assisted development.
 

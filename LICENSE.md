@@ -1,4 +1,4 @@
-The Samuel Public License Revision 5 Sub-Revision 1 (SPL-R5 SR1)
+The Sammy Public License Revision 5 Sub-Revision 1 (SPL-R5 SR1)
 
 Copyright (c) 2024 Sneed Group
 

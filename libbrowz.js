@@ -1,8 +1,30 @@
 let tabGroup = document.querySelector("tab-group");
+function normalizeUrl(url) {
+    // Define regex patterns for matching URL schemes and local addresses
+    const httpPattern = /^http:\/\//i;
+    const httpsPattern = /^https:\/\//i;
+    const filePattern = /^file:\/\//i;
+    const indexPattern = /^index\.html/i;
+    const localPattern = /^(192\.168|127\.0|localhost)/i;
+
+    // Check if the URL already has a valid scheme
+    if (httpPattern.test(url) || httpsPattern.test(url) || filePattern.test(url) || indexPattern.test(url)) {
+        return url;
+    }
+
+    // Determine if the URL starts with a local address or needs HTTPS
+    if (localPattern.test(url)) {
+        return `http://${url}`;
+    } else {
+        return `https://${url}`;
+    }
+}
+
+
 function go() {
     let browserFrame = tabGroup.getActiveTab().webview
     let browser = tabGroup.getActiveTab()
-    let url = document.getElementById("txtUrl").value
+    let url = normalizeUrl(document.getElementById("txtUrl").value)
     if (url.includes("youtube.com") || url.includes("youtu.be")) {
     	url = url.replaceAll("youtube.com", "yewtu.be")
     	url = url.replaceAll("youtu.be", "yewtu.be")

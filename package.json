@@ -17,7 +17,7 @@
     "demo"
   ],
   "author": "FStop Tech",
-  "license": "MIT  (Modified)",
+  "license": "SPL-R5",
   "devDependencies": {
     "@electron-forge/cli": "^6.0.5",
     "@electron-forge/maker-deb": "^6.0.5",

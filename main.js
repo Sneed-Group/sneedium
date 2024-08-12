@@ -3,18 +3,32 @@ const {app, BrowserWindow, session, ipcMain} = require('electron')
 const path = require('path')
 const fetch = require("cross-fetch")
 const { ElectronChromeExtensions } = require('electron-chrome-extensions')
+const { ElectronBlocker } = require('@cliqz/adblocker-electron');
 
 ipcMain.on('windowmaker', (event, arg) => {
   createWindow();
 })
 
-function createWindow () {
-  // Create the browser window.
 
-  const extensions = new ElectronChromeExtensions({
-    session: session.defaultSession
+//Function to enable AD Blocking and extensions...
+let blocker = undefined
+let extensions = undefined
+async function enableGoodies(s) {
+  blocker = await ElectronBlocker.fromLists(fetch, [
+    'https://easylist.to/easylist/easylist.txt',
+    'https://secure.fanboy.co.nz/fanboy-annoyance.txt',
+    'https://easylist.to/easylist/easyprivacy.txt',
+    'https://easylist-downloads.adblockplus.org/antiadblockfilters.txt',
+    'https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/nocoin.txt',
+    'https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/adblock/pro.plus.txt'
+  ])
+  blocker.enableBlockingInSession(s);
+  extensions = new ElectronChromeExtensions({
+    session: s
   })
+}
 
+function createWindow () {
   const mainWindow = new BrowserWindow({
     width: 1000,
     height: 600,
@@ -100,8 +114,6 @@ const regexPatterns = [
     }
     return callback({})
   })
-
-  extensions.addTab(mainWindow.webContents, mainWindow)
   
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
@@ -117,6 +129,7 @@ const regexPatterns = [
 // Some APIs can only be used after this event occurs.
 app.whenReady().then(() => {
   let x = createWindow()
+  enableGoodies().then()
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the
     // dock icon is clicked and there are no other windows open.

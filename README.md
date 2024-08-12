@@ -1,7 +1,7 @@
 <img src="logo.png" align="right" width="15%"/>
 
 # Sneedium
-A basic web browser in Electron. ***Now with our own, functioning adblocker and privacy redirection technologies!***
+A basic web browser in Electron. ***Now with a functioning adblocker and privacy redirection technologies!***
 
 Supports compiling via electron packager. Install and run it with:
 
@@ -41,4 +41,4 @@ npm start
 
 ## What is Privacy Redirection Technology (PRT)?
 
-This is a simple technology that replaces a bad URL with a more privacy friendly service, when we know that ADs aren't 100% blocked, or just to provide a better UX. TLDR: Clickjacking for good.
+This is a simple technology that replaces a bad URL with a more privacy friendly service, when we know that ADs aren't 100% blocked, or just to provide a better UX. TLDR: Clickjacking for the greater good.

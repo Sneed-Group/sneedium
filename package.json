@@ -1,5 +1,5 @@
 {
-  "name": "fstopium",
+  "name": "sneedium",
   "version": "1.0.0",
   "description": "A Electron browser",
   "main": "main.js",
@@ -16,7 +16,7 @@
     "tutorial",
     "demo"
   ],
-  "author": "FStop Tech",
+  "author": "Sneed Group",
   "license": "SPL-R5",
   "devDependencies": {
     "@electron-forge/cli": "^6.0.5",

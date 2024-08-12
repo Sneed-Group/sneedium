@@ -26,8 +26,8 @@ function go() {
     let browser = tabGroup.getActiveTab()
     let url = normalizeUrl(document.getElementById("txtUrl").value)
     if (url.includes("youtube.com") || url.includes("youtu.be")) {
-    	url = url.replaceAll("youtube.com", "piped.video")
-    	url = url.replaceAll("youtu.be", "piped.video")
+    	url = url.replaceAll("youtube.com", "invidious.perennialte.ch")
+    	url = url.replaceAll("youtu.be", "invidious.perennialte.ch")
     } else if (url.includes("google.com/?q")) {
     	url = url.replaceAll("google.com/?q", "startpage.com/?q")
     } else if (url.includes("https://news.google.com")) {

@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   for (const type of ['chrome', 'node', 'electron']) {
-    replaceText(`${type}-version`, process.versions[type])
+    replaceText(`${type}-version`, 'fstopium-version')
   }
   const { ipcRenderer } = require('electron')
   ipcRenderer.on('windowmaker', (event, arg) => {

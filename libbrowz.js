@@ -32,8 +32,6 @@ function go() {
     	url = url.replaceAll("google.com/?q", "startpage.com/?q")
     } else if (url.includes("https://news.google.com")) {
     	url = url.replaceAll("https://news.google.com", "http://68k.news")
-    } else if (url.includes("news.google.com")) {
-    	url = url.replaceAll("news.google.com", "68k.news")
     } else if (url.includes("google.com") && !url.includes("maps") && !url.includes("news") && !url.includes("webstore") && !url.includes("mail")) {
     	url = url.replaceAll("google.com", "startpage.com")
     }

@@ -32,8 +32,8 @@ function go() {
     	url = url.replaceAll("google.com/?q", "startpage.com/?q")
     } else if (url.includes("https://news.google.com")) {
     	url = url.replaceAll("https://news.google.com", "http://68k.news")
-    } else if (url.includes("google.com") && !url.includes("maps") && !url.includes("news") && !url.includes("webstore") && !url.includes("mail")) {
-    	url = url.replaceAll("google.com", "startpage.com")
+    } else if (url.includes("google.com") && !url.includes("maps") && !url.includes("news") && !url.includes("webstore") && !url.includes("drive") && !url.includes("docs") && !url.includes("sheets") && !url.includes("slides") && !url.includes("mail")) {
+    	url = url.replaceAll("google.com", "search.sparksammy.com")
     }
     document.getElementById("txtUrl").value = ""
     browserFrame.loadURL(url);

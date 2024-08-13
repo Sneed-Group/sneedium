@@ -1,3 +1,23 @@
+const userAgents = [
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Firefox/128.0",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:128.0) Gecko/20100101 Firefox/128.0",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Edg/120.0.0.0",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Edg/98.0.0.0",
+    "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0",
+    "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Firefox/128.0"
+];
+
+function getRandomUserAgent() {
+    const randomIndex = Math.floor(Math.random() * userAgents.length);
+    return userAgents[randomIndex];
+}
+
+let currentUA = "" // We haven't loaded any websites yet. It should be blank.
+
 let tabGroup = document.querySelector("tab-group");
 function normalizeUrl(url) {
     // Define regex patterns for matching URL schemes and local addresses
@@ -23,6 +43,7 @@ function normalizeUrl(url) {
 let url = undefined
 let browserFrame = undefined
 function go() {
+    currentUA = getRandomUserAgent()
     browserFrame = tabGroup.getActiveTab().webview
     let browser = tabGroup.getActiveTab()
     url = normalizeUrl(document.getElementById("txtUrl").value)
@@ -38,7 +59,7 @@ function go() {
     }
     document.getElementById("txtUrl").value = ""
     browserFrame.loadURL(url, 
-        {userAgent: 'Sneedium/Undefined (Windows NT 5.1; Win32) AppleWebKit/537.92 (Blink, like Electron) Blink/109.0.5414.74 Safari/537.92'});
+        {userAgent: currentUA});
     browserFrame.addEventListener('dom-ready', () => {
         browserFrame.insertCSS(`
         ::-webkit-scrollbar {
@@ -77,7 +98,7 @@ function forward() {
 function refresh() {
     if (typeof url != undefined) {
         browserFrame.loadURL(browserFrame.getURL(), 
-            {userAgent: 'Sneedium/Undefined (Windows NT 5.1; Win32) AppleWebKit/537.92 (Blink, like Electron) Blink/109.0.5414.74 Safari/537.92'});
+            {userAgent: currentUA});
     } else {
         window.location.reload()
     }

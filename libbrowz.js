@@ -51,12 +51,13 @@ function go() {
     	url = url.replaceAll("youtube.com", "invidious.nerdvpn.de")
     	url = url.replaceAll("youtu.be", "invidious.nerdvpn.de")
     } else if (url.includes("google.com/?q")) {
-    // Define the regex pattern
-    const pattern = /https:\/\/www\.google\.com\/search\?q=([^&]+)/;
-    // Define the replacement URL
-    const replacement = "https://search.sparksammy.com/search.php?q=$1&p=0&t=0";
-    // Perform the replacement
-    url = url.replace(pattern, replacement);
+        // Define the regex pattern
+        const pattern = /https:\/\/www\.google\.com\/search\?q=([^&]+)/;
+        // Define the replacement URL
+        const replacement = "https://search.sparksammy.com/search.php?q=$1&p=0&t=0";
+        // Perform the replacement
+        url = url.replace(pattern, replacement);
+        console.log(url)
     } else if (url.includes("https://news.google.com")) {
     	url = url.replaceAll("https://news.google.com", "http://68k.news")
     } else if (url.includes("google.com") && !url.includes("maps") && !url.includes("news") && !url.includes("webstore") && !url.includes("drive") && !url.includes("docs") && !url.includes("sheets") && !url.includes("slides") && !url.includes("mail")) {

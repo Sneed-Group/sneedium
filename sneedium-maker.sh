@@ -6,3 +6,5 @@ mv sneedium-linux-* "Sneedium $y.$v"
 mv sneedium-win32-* "Sneedium $y.$v"
 tar -czvf "Sneedium $y.$v.tar.gz" "Sneedium $y.$v"
 rm -rf "Sneedium $y.$v"
+mkdir ~/sneedium-bins
+mv "Sneedium $y.$v.tar.gz" ~/sneedium-bins

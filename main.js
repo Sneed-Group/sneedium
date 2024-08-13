@@ -11,7 +11,8 @@ ipcMain.on('windowmaker', (event, arg) => {
   createWindow();
 })
 
-
+const proxy = createProxy(http.createServer());
+proxy.listen(3129)
 //Function to enable AD Blocking and extensions...
 let blocker = undefined
 let extensions = undefined
@@ -111,12 +112,6 @@ const regexPatterns = [
 
     return false;
   }
-
-  // set/create local proxy
-  try {
-    const proxy = createProxy(http.createServer());
-    proxy.listen(3129)
-  } catch {}
 
   session.defaultSession.setProxy({
     proxyRules: 'http=localhost:3129;https=localhost:3129',

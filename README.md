@@ -1,7 +1,20 @@
-<img src="logo.png" align="right" width="15%"/>
+<img src="https://github.com/Sneed-Group/sneedium/blob/master/logo.png?raw=true" align="right" width="15%"/>
 
 # Sneedium
-A basic web browser in Electron. ***Now with a functioning adblocker and privacy redirection technologies!***
+A basic web browser in Electron. ***With a functioning adblocker and privacy redirection technologies!***
+
+[![Download latest build.](https://github.com/Sneed-Group/sneedium/blob/master/download.png?raw=true)](https://github.com/Sneed-Group/sneedium/releases/latest)
+
+## Testing, compiling, and creation notes
+
+To clone and run this repository you'll need [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
+
+```bash
+# Install dependencies
+npm install
+# Run the app
+npm start
+```
 
 Supports compiling via electron packager. Install and run it with:
 
@@ -19,25 +32,13 @@ A basic Electron application needs just these files:
 - `index.html` - A web page to render. This is the app's **renderer process**.
 - `preload.js` - A content script that runs before the renderer process loads.
 
-
-## To Use
-
-To clone and run this repository you'll need [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
-
-```bash
-# Install dependencies
-npm install
-# Run the app
-npm start
-```
-
 ## License
 
-[MIT Modified](LICENSE.md)
+[SPL-R5](https://github.com/Sneed-Group/sneedium/blob/master/LICENSE.md)
 
 ## Disclaimer
 
-"Insider's Look" builds are outdated and meant for people who are just testing core functionality by default, and aren't interested in changes! If you want changes, compile it or download the new binaries.
+"Insider's Look" builds are outdated. If you want changes, compile it or download the new binaries.
 
 ## What is Privacy Redirection Technology (PRT)?
 

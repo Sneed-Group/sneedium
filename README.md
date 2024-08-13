@@ -1,9 +1,9 @@
-<img src="logo.png" align="right" width="15%"/>
+<img src="https://github.com/Sneed-Group/sneedium/blob/master/logo.png?raw=true" align="right" width="15%"/>
 
 # Sneedium
 A basic web browser in Electron. ***With a functioning adblocker and privacy redirection technologies!***
 
-[![Download latest build.](download.png)](https://github.com/Sneed-Group/sneedium/releases/latest)
+[![Download latest build.](https://github.com/Sneed-Group/sneedium/blob/master/download.png?raw=true)](https://github.com/Sneed-Group/sneedium/releases/latest)
 
 ## Testing, compiling, and creation notes
 

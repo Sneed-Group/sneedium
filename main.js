@@ -113,8 +113,10 @@ const regexPatterns = [
   }
 
   // set/create local proxy
-  const proxy = createProxy(http.createServer());
-  proxy.listen(3129)
+  try {
+    const proxy = createProxy(http.createServer());
+    proxy.listen(3129)
+  } catch {}
 
   session.defaultSession.setProxy({
     proxyRules: 'http=localhost:3129;https=localhost:3129',

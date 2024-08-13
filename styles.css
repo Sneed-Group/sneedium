@@ -78,6 +78,17 @@ body {
   font-size: 1.25rem;
 }
 
+#refreshBtn {
+  background-color: #507fac; /* Aqua */
+  border: none;
+  color: white;
+  padding: 1% 1%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1.25rem;
+}
+
 #txtUrl {
   border: none;
   padding: 1% 1%;
@@ -89,16 +100,26 @@ body {
 }
 
 html, body {
+  height: 98%;
   width: 100%;
-  height: 100%;
+  justify-content: center; /* Center horizontally */
+  align-items: center;    /* Center vertically */
+}
+
+#whProtection {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  bottom: 5%;
+  transform: translate(-50%, -46%); /* Offset by half the width and 46% height */
+  width: 90%; /* % of viewport width */
+  height: 86%; /* % of viewport height */
+  border: 1vw solid green; /* Border color and thickness */
+  box-sizing: border-box;
 }
 
 webview {
-  position: fixed;
-  bottom: 0;
-  max-height: 90%!important;
-  max-width: 100%;
   width: 100%;
-  height: 90%!important;
-  display: inline-flex!important;
+  height: 100%;
+  border: none;
 }

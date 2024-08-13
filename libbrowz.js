@@ -20,11 +20,12 @@ function normalizeUrl(url) {
     }
 }
 
-
+let url = undefined
+let browserFrame = undefined
 function go() {
-    let browserFrame = tabGroup.getActiveTab().webview
+    browserFrame = tabGroup.getActiveTab().webview
     let browser = tabGroup.getActiveTab()
-    let url = normalizeUrl(document.getElementById("txtUrl").value)
+    url = normalizeUrl(document.getElementById("txtUrl").value)
     if (url.includes("youtube.com") || url.includes("youtu.be")) {
     	url = url.replaceAll("youtube.com", "invidious.nerdvpn.de")
     	url = url.replaceAll("youtu.be", "invidious.nerdvpn.de")
@@ -36,7 +37,8 @@ function go() {
     	url = url.replaceAll("google.com", "search.sparksammy.com")
     }
     document.getElementById("txtUrl").value = ""
-    browserFrame.loadURL(url);
+    browserFrame.loadURL(url, 
+        {userAgent: 'Sneedium/Undefined (Windows NT 5.1; Win32) AppleWebKit/537.92 (Blink, like Electron) Blink/109.0.5414.74 Safari/537.92'});
     browserFrame.addEventListener('dom-ready', () => {
         browserFrame.insertCSS(`
         ::-webkit-scrollbar {
@@ -72,6 +74,15 @@ function forward() {
     browserFrame.goForward()
 }
 
+function refresh() {
+    if (typeof url != undefined) {
+        browserFrame.loadURL(browserFrame.getURL(), 
+            {userAgent: 'Sneedium/Undefined (Windows NT 5.1; Win32) AppleWebKit/537.92 (Blink, like Electron) Blink/109.0.5414.74 Safari/537.92'});
+    } else {
+        window.location.reload()
+    }
+}
+
 tabGroup.setDefaultTab({
     title: CONF.homepageTitle,
     src: CONF.homepage,
@@ -84,4 +95,3 @@ function clickPress(keyEvent) {
         go()
     }
 }
-

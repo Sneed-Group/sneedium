@@ -12,13 +12,16 @@
     <button id="nwBtn">📄</button>
     <input id="txtUrl" placeholder="Put the website here" name="url" type="text" onkeypress="clickPress(event)" />
     <button onclick="go(); return false;" id="goBtn">✅</button>
+    <button onclick="refresh(); return false;" id="refreshBtn">🔄</button>
     <button onclick="stop(); return false;" id="stopBtn">🛑</button> 
     <button onclick="back(); return false;" id="backBtn">⬅️</button>
     <button onclick="forward(); return false;" id="forwardBtn">➡️</button>
     </div>
+    <div id="whProtection">
     <tab-group new-tab-button="true" sortable="true">
     <webview id="foo" autosize plugins disablewebsecurity></webview>
     </tab-group>
+    </div>
     <script src="node_modules/electron-tabs/dist/electron-tabs.js"></script>
     <script type="text/javascript" src="./userscript/userscripts.js"></script>
     <script type="text/javascript" src="./config.js"></script>

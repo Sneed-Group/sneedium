@@ -30,8 +30,10 @@ async function enableGoodies(s) {
 
 function createWindow () {
   const mainWindow = new BrowserWindow({
-    width: 1000,
+    width: 1100,
     height: 600,
+    minWidth: 1100,
+    minHeight: 600,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       webviewTag: true,
@@ -118,8 +120,6 @@ const regexPatterns = [
   // and load the index.html of the app.
   mainWindow.loadFile('index.html')
 
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools()
   
   return mainWindow;
 }

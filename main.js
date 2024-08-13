@@ -4,6 +4,8 @@ const path = require('path')
 const fetch = require("cross-fetch")
 const { ElectronChromeExtensions } = require('electron-chrome-extensions')
 const { ElectronBlocker } = require('@cliqz/adblocker-electron');
+const http = require('http');
+const { createProxy } = require('proxy');
 
 ipcMain.on('windowmaker', (event, arg) => {
   createWindow();
@@ -110,6 +112,15 @@ const regexPatterns = [
     return false;
   }
 
+  // set/create local proxy
+  const proxy = createProxy(http.createServer());
+  proxy.listen(3129)
+
+  session.defaultSession.setProxy({
+    proxyRules: 'http=localhost:3129;https=localhost:3129',
+    proxyBypassRules: '<local>'
+  })
+
   session.defaultSession.webRequest.onBeforeRequest((details, callback) => {
     if (containsAD(details.url)) {
       return callback({cancel: true})
@@ -146,3 +157,14 @@ app.on('window-all-closed', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+// Set DNS
+app.on('ready', () => {
+  app.configureHostResolver({
+    mode: 'secure',
+    dohServers: [
+      'https://dns9.quad9.net/dns-query',
+      'https://cloudflare-dns.com/dns-query'
+    ]
+  });
+});

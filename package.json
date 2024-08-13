@@ -34,6 +34,7 @@
     "cross-fetch": "^3.1.5",
     "electron-chrome-extensions": "^3.10.0",
     "electron-squirrel-startup": "^1.0.1",
-    "electron-tabs": "^1.0.1"
+    "electron-tabs": "^1.0.1",
+    "proxy": "^2.2.0"
   }
 }

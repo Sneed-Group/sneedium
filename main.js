@@ -31,6 +31,17 @@ async function enableGoodies(s) {
   })
 }
 
+// 0.0.0.0 day fix
+const locals = [
+  '0.0.0.0', '127.0.0.1', '192.168', '.local'
+];
+
+// Function to check if a URL is restricted
+function isLocal(url) {
+  return locals.some(local => url.includes(local));
+}
+
+
 function createWindow () {
   const mainWindow = new BrowserWindow({
     width: 1100,
@@ -122,7 +133,28 @@ const regexPatterns = [
     if (containsAD(details.url)) {
       return callback({cancel: true})
     }
-    return callback({})
+
+    const url = new URL(details.url);
+    const hostname = url.hostname;
+    const isLocalDomain = isLocal(hostname);
+    
+    // Check if the request is to a local domain
+    if (isLocalDomain) {
+      // Check if the request is initiated by a remote domain
+      const initiator = details.initiator ? new URL(details.initiator).hostname : '';
+      const isInitiatorLocal = isLocal(initiator);
+      
+      if (initiator && !isInitiatorLocal) {
+        console.log(`[W] Local domain is being accessed by external source (${initiator}), don't allow!`);
+        callback({ cancel: true }); // Block request to local domains from remote sources
+      } else {
+        //console.log("Local domain is not being accessed by external source, allow..."); //debug
+        callback({ cancel: false }); // Allow request
+      }
+    } else {
+      //console.log("Request is not to a local domain, allow..."); //debug
+      callback({ cancel: false }); // Allow non-local requests
+    }
   })
   
   // and load the index.html of the app.

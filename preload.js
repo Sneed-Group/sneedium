@@ -5,6 +5,14 @@
  * 
  * https://www.electronjs.org/docs/latest/tutorial/sandbox
  */
+
+const { contextBridge, ipcRenderer } = require('electron');
+
+contextBridge.exposeInMainWorld('electron', {
+  enforceDomainRestrictions: (url) => ipcRenderer.sendSync('check-domain', url),
+});
+
+
 window.addEventListener('DOMContentLoaded', () => {
   const replaceText = (selector, text) => {
     const element = document.getElementById(selector)
@@ -14,7 +22,7 @@ window.addEventListener('DOMContentLoaded', () => {
   for (const type of ['chrome', 'node', 'electron']) {
     replaceText(`${type}-version`, 'sneedium-version')
   }
-  const { ipcRenderer } = require('electron')
+
   ipcRenderer.on('windowmaker', (event, arg) => {
     console.log(arg) // prints "pong"
   })

@@ -33,7 +33,7 @@ async function enableGoodies(s) {
 
 // 0.0.0.0 day fix
 const locals = [
-  '0.0.0.0', '127.0.0.1', '192.168', '.local'
+  '0.0.0.0', '127.0.0.1', '192.168', '.local', '.example', '.staging', 'fe80::', '::1'
 ];
 
 // Function to check if a URL is restricted
@@ -148,7 +148,7 @@ const regexPatterns = [
         console.log(`[W] Local domain is being accessed by external source (${initiator}), don't allow!`);
         callback({ cancel: true }); // Block request to local domains from remote sources
       } else {
-        //console.log("Local domain is not being accessed by external source, allow..."); //debug
+        //console.log("Local domain is not being accessed by external source, allow..."); // debug
         callback({ cancel: false }); // Allow request
       }
     } else {

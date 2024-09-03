@@ -6,7 +6,8 @@
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "npx electron-packager --platform linux,win32 --arch x64,arm64 ."
+    "make": "npx electron-packager --platform linux,win32 --arch x64,arm64 .",
+    "make-mac": "npx electron-packager --platform darwin --arch x64 ."
   },
   "repository": "https://github.com/Sneed-Group/sneedium",
   "keywords": [

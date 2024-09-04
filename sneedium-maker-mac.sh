@@ -5,6 +5,6 @@ mkdir "Sneedium $y.$v"
 mv sneedium-darwin-arm64 "Sneedium4Mac $y.$v"
 mv sneedium-darwin-x64 "Sneedium4Mac $y.$v"
 tar -czvf "Sneedium4Mac $y.$v.tar.gz" "Sneedium4Mac $y.$v"
-rm -rf "Sneedium $y.$v"
+rm -rf "Sneedium4Mac $y.$v"
 mkdir ~/sneedium-mac-bins
 mv "Sneedium $y.$v.tar.gz" ~/sneedium-mac-bins

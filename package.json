@@ -31,7 +31,7 @@
     "electron-packager": "^17.1.2"
   },
   "dependencies": {
-    "@cliqz/adblocker-electron": "^1.31.3",
+    "@cliqz/adblocker-electron": "^1.33.2",
     "cross-fetch": "^3.1.5",
     "electron-chrome-extensions": "^3.10.0",
     "electron-squirrel-startup": "^1.0.1",

@@ -106,20 +106,24 @@ html, body {
   align-items: center;    /* Center vertically */
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 #whProtection {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  bottom: 5%;
-  transform: translate(-50%, -46%); /* Offset by half the width and 46% height */
-  width: 90%; /* % of viewport width */
-  height: 86%; /* % of viewport height */
-  border: 1vw solid green; /* Border color and thickness */
+  width: 100%; /* % of viewport width */
+  height: 100%; /* % of viewport height */
+  border: 2vw solid rgb(70, 70, 70); /* Border color and thickness */
   box-sizing: border-box;
+  display: block;
+  overflow: scroll;
 }
 
 webview {
   width: 100%;
   height: 100%;
   border: none;
+  box-sizing: border-box; /* Ensures any padding or border inside the webview is included in the total size */
+  display: block; /* Ensure it behaves as a block element */
 }

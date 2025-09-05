@@ -27,7 +27,7 @@
     "@electron-forge/maker-squirrel": "^6.0.5",
     "@electron-forge/maker-zip": "^6.0.5",
     "electron": "^31.0.1",
-    "electron-forge-maker-appimage": "^24.6.3",
+    "electron-forge-maker-appimage": "^25.0.5",
     "electron-packager": "^17.1.2"
   },
   "dependencies": {

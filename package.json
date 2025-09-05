@@ -20,7 +20,7 @@
   "author": "Sneed Group",
   "license": "SPL-R5",
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.5",
+    "@electron-forge/cli": "^7.4.0",
     "@electron-forge/maker-deb": "^6.0.5",
     "@electron-forge/maker-flatpak": "^6.0.5",
     "@electron-forge/maker-rpm": "^6.0.5",
